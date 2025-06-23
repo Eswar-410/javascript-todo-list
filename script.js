@@ -19,7 +19,7 @@ add.addEventListener('click', (event) => {
     else if (add.textContent === 'update') {
         getTime();
         makeCard(getDetails.value)
-                
+
         todoData.push({
             content: getDetails.value,
             timestamp: timeNow.textContent
@@ -133,13 +133,14 @@ function makeCard(content) {
             manipulate.remove();
 
             let field = document.createElement('input');
+
             field.type = 'text';
             field.style.display = 'flex';
-            field.placeholder = 'Enter the position...';
+            field.placeholder = 'position...';
+            field.id='handle-order';
+            subDiv2.className = 'handle-input';
+            
 
-            subDiv2.className = '';
-            field.style.height = '30px';
-            field.style.padding = '2px';
             subDiv2.appendChild(field);
             subDiv2.style.alignContent = 'center';
 

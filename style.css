@@ -82,6 +82,7 @@ body {
     width: 75%;
     margin: 20px 0 10px 3.2rem;
     padding: 10px;
+    word-wrap: break-word;
 
 }
 
@@ -116,6 +117,21 @@ body {
     justify-content: space-evenly;
     align-items: center;
 }
+.handle-input{
+    display: flex;
+    flex-wrap: wrap;
+    width:35%;
+    padding-right:15px;
+    font-size: 2rem;
+}
+#handle-order{
+    height: 30px;
+    width: 7rem;
+    font-size: 0.8rem;
+    padding: 2px;
+}
+
+
 
 .check {
     width: 18px;
@@ -128,6 +144,7 @@ body {
     }
     .append-item{
         width:65%;
+        padding-right: 0;
     }
     .add-options {
     padding-right:5px;
@@ -143,10 +160,18 @@ body {
 
 }
 
+
+
+
+#handle-order{
+    max-width: 3.5rem;
+}
+
 }
 @media (max-width:570px){
 
     #get-details{
         font-size: 0.9rem;
     }
+    
 }
