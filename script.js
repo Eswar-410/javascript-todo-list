@@ -72,7 +72,7 @@ function makeCard(content) {
     subDiv.appendChild(p);
 
     let options = document.createElement('i');
-    options.classList.add("fa-solid", "fa-bars",'icon-style');
+    options.classList.add("fa-solid", "fa-bars", 'icon-style');
     subDiv2.appendChild(options);
 
     checkBox.addEventListener('click', (event) => {
@@ -92,15 +92,15 @@ function makeCard(content) {
         subDiv2.className = 'options-request';
 
         let edit = document.createElement('i');
-        edit.classList.add('fa-solid', 'fa-pen-to-square','icon-style');
+        edit.classList.add('fa-solid', 'fa-pen-to-square', 'icon-style');
         subDiv2.appendChild(edit);
 
         let trash = document.createElement('i');
-        trash.classList.add('fa-solid', 'fa-trash','icon-style');
+        trash.classList.add('fa-solid', 'fa-trash', 'icon-style');
         subDiv2.appendChild(trash);
 
         let manipulate = document.createElement('i');
-        manipulate.classList.add('fa-solid', 'fa-sliders','icon-style');
+        manipulate.classList.add('fa-solid', 'fa-sliders', 'icon-style');
         subDiv2.appendChild(manipulate);
 
         trash.addEventListener('click', function deleteNow(event) {
@@ -118,11 +118,21 @@ function makeCard(content) {
 
         edit.addEventListener('click', (event) => {
             event.stopPropagation();
-            getDetails.value = p.textContent;
-            add.textContent = 'update';
-            add.style.background = 'lightgreen';
-            add.style.color = 'black';
-            div.remove();
+            if (getDetails.value === '') {
+
+                getDetails.value = p.textContent;
+                add.textContent = 'update';
+                add.style.background = 'lightgreen';
+                add.style.color = 'black';
+                let target = items.indexOf(div);
+                items.splice(target, 1);
+                div.remove();
+            }
+            else{
+                alert('Update the existing edit to continue')
+            }
+
+
         })
 
         manipulate.addEventListener('click', (event) => {
@@ -137,9 +147,9 @@ function makeCard(content) {
             field.type = 'text';
             field.style.display = 'flex';
             field.placeholder = 'position...';
-            field.id='handle-order';
+            field.id = 'handle-order';
             subDiv2.className = 'handle-input';
-            
+
 
             subDiv2.appendChild(field);
             subDiv2.style.alignContent = 'center';
