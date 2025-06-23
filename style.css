@@ -54,7 +54,7 @@ body {
 
 #details {
     display: flex;
-    margin: 20px 20px 0 50px;
+    margin: 20px 20px 0 3rem;
 }
 
 
@@ -62,7 +62,7 @@ body {
     height: 2.8rem;
     border-radius: 999px;
     border: none;
-    width: 100px;
+    width: 6.5rem;
     margin-left: 20px;
 
     background-color: darkorange;
@@ -138,6 +138,11 @@ body {
     padding-right:0;
     
 }
+#get-details {
+    width: 100%;
+
+}
+
 }
 @media (max-width:570px){
 
