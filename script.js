@@ -19,11 +19,12 @@ add.addEventListener('click', (event) => {
     else if (add.textContent === 'update') {
         getTime();
         makeCard(getDetails.value)
-
+                
         todoData.push({
             content: getDetails.value,
             timestamp: timeNow.textContent
         });
+
         localStorage.setItem('todos', JSON.stringify(todoData));
 
         getDetails.value = '';
@@ -71,10 +72,7 @@ function makeCard(content) {
     subDiv.appendChild(p);
 
     let options = document.createElement('i');
-    options.classList.add("fa-solid", "fa-bars");
-    options.style.color = '#ec8209';
-    options.style.cursor = 'pointer';
-    options.style.fontSize = '20px';
+    options.classList.add("fa-solid", "fa-bars",'icon-style');
     subDiv2.appendChild(options);
 
     checkBox.addEventListener('click', (event) => {
@@ -92,23 +90,17 @@ function makeCard(content) {
     options.addEventListener('click', () => {
         subDiv2.removeChild(options);
         subDiv2.className = 'options-request';
+
         let edit = document.createElement('i');
-        edit.classList.add('fa-solid', 'fa-pen-to-square');
-        edit.style.color = '#ec8209';
-        edit.style.fontSize = '20px';
-        edit.style.cursor = 'pointer';
+        edit.classList.add('fa-solid', 'fa-pen-to-square','icon-style');
         subDiv2.appendChild(edit);
+
         let trash = document.createElement('i');
-        trash.classList.add('fa-solid', 'fa-trash');
-        trash.style.color = '#ec8209';
-        trash.style.fontSize = '20px';
-        trash.style.cursor = 'pointer';
+        trash.classList.add('fa-solid', 'fa-trash','icon-style');
         subDiv2.appendChild(trash);
+
         let manipulate = document.createElement('i');
-        manipulate.classList.add('fa-solid', 'fa-sliders');
-        manipulate.style.color = '#ec8209';
-        manipulate.style.fontSize = '20px';
-        manipulate.style.cursor = 'pointer';
+        manipulate.classList.add('fa-solid', 'fa-sliders','icon-style');
         subDiv2.appendChild(manipulate);
 
         trash.addEventListener('click', function deleteNow(event) {
@@ -195,10 +187,7 @@ function getTime(existingTime) {
         timeNow.textContent = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
     }
     timeNow.style.height = '20px';
-
-
 }
-
 function isfloat(num) {
     return num.includes('.') && !Number.isNaN(num);
 }
